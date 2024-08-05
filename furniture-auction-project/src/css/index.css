@@ -1,0 +1,353 @@
+body {
+  margin: 0;
+  padding-top: 20px; /* Add some padding to the top to ensure the header is fully visible */
+  font-family: 'Arial', sans-serif;
+  background-color: #F8F8F8; /* Very light gray/white background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+header {
+  background-color: black; /* Black background */
+  color: #fff;
+  padding: 0 20px; /* Add padding to ensure the header content is not too close to the edges */
+  height: 60px; /* Set header height */
+  width: 80%; /* Full width */
+  max-width: 900px; /* Max width for larger screens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px; /* Rounded corners */
+  margin: 20px auto; /* Margin to center horizontally at the top */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.main-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  height: 100%; /* Match height of header */
+}
+
+.main-nav li {
+  margin: 0;
+  margin-right: 5%;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 1rem; /* Only horizontal padding */
+  height: 100%; /* Match height of header */
+  display: flex;
+  align-items: center; /* Center vertically */
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.main-nav a:hover {
+  background-color: #666; /* Medium Gray hover */
+  color: #fff;
+}
+
+.main-nav a.active {
+  background-color: #999; /* Lighter Gray selection */
+  color: #fff;
+}
+
+.main-content {
+  width: 100%; /* Full width */
+  min-width: 1200px; /* Max width for larger screens */
+  margin: 0 auto; /* Center content */
+  padding: 20px; /* Add some padding */
+}
+
+h1 {
+  text-align: center;
+  color: #333; /* Dark Gray */
+  margin-top: 40px; /* Adjust margin to create space for the header */
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  width: 300px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-left: none;
+  background-color: black; /* Black background */
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-bar button:hover {
+  background-color: #795548; /* Medium Brown */
+}
+
+.furniture-items {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the items horizontally */
+  margin-top: 40px; /* Add margin to create space between header and items */
+  gap: 20px; /* Space between the cards */
+}
+
+.furniture-item {
+  position: relative; /* For positioning the delete button */
+  background-color: #fff; /* White background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.furniture-item:hover {
+  transform: translateY(-5px);
+}
+
+.furniture-item:hover .delete-button {
+  display: block;
+}
+
+.delete-button {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.edit-button {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.furniture-item:hover .edit-button {
+  display: block;
+}
+
+.furniture-img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+h3 {
+  margin: 15px 0 10px;
+  color: #333; /* Dark Gray */
+}
+
+p {
+  color: #666; /* Medium Gray */
+}
+
+.about-us {
+  max-width: 60%;
+  margin: 0 auto; /* Center the content */
+  color: #333;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px; /* Limit the form width */
+  margin: 0 auto;
+}
+
+.create-form label {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.create-form input,
+.create-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.create-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.create-form button:hover {
+  background-color: #333;
+}
+
+/* Bid form styles */
+.bid-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.bid-form input {
+  height: 6px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  width: 100px;
+  font-size: 16px;
+}
+
+.bid-form button {
+  margin-top: -1px;
+  margin-left: -5px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-left: none;
+  background-color: black; /* Black background */
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.bid-form button:hover {
+  background-color: #666;; /* Medium Brown */
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px; /* Limit the form width */
+  margin: 0 auto;
+}
+
+.edit-form label {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.edit-form input,
+.edit-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.edit-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.edit-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.edit-form button:hover {
+  background-color: #333;
+}
+
+
+.timer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  margin-bottom:0 ;
+}
+ 
+.timer-heading {
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+ 
+.timer {
+  display: flex;
+  padding: 15px;
+  background-color: black;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+ 
+.timer-item {
+  margin: 0 15px;
+  text-align: center;
+}
+ 
+.timer-value {
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+}
+ 
+.timer-label {
+  display: block;
+  font-size: 0.9em;
+  color: white;
+}
+ 
