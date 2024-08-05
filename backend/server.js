@@ -3,7 +3,10 @@ const mongoose = require("mongoose");
 const cors = require('cors');
 const url = require('url');
 const app = express();
-const PORT = 8000;
+require('dotenv').config();
+
+const PORT = process.env.PORT || 8000;
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Middleware
 app.use(cors());
