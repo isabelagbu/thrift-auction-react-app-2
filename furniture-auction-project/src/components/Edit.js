@@ -13,7 +13,7 @@ const Edit = () => {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/thrift-items/${id}`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/thrift-items/${id}`)
       .then(response => {
         setItem(response.data);
       })
@@ -32,7 +32,7 @@ const Edit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:8000/api/thrift-items/edit/${id}`, item)
+    axios.put(`${process.env.REACT_APP_API_URL}/api/thrift-items/edit/${id}`, item)
       .then(() => {
         navigate('/');  // Redirect to home or another page after successful update
       })

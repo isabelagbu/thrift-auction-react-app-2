@@ -23,7 +23,7 @@ const Create = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8000/api/thrift-items', item)
+    axios.post(`${process.env.REACT_APP_API_URL}/api/thrift-items`, item)
       .then(() => {
         navigate('/');  // Redirect to home or another page after successful creation
       })

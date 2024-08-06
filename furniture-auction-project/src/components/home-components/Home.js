@@ -10,7 +10,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/thrift-items')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/thrift-items`)
       .then(response => {
         setThriftItems(response.data);
       })
@@ -20,7 +20,7 @@ const Home = () => {
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:8000/api/thrift-items/${id}`)
+    axios.delete(`${process.env.REACT_APP_API_URL}/api/thrift-items/${id}`)
       .then(response => {
         setThriftItems(thriftItems.filter(item => item.id !== id));
       })
@@ -35,7 +35,7 @@ const Home = () => {
 
   const handleSearch = () => {
     if (searchTerm.trim() === '') {
-      axios.get('http://localhost:8000/api/thrift-items')
+      axios.get(`${process.env.REACT_APP_API_URL}/api/thrift-items`)
         .then(response => {
           setThriftItems(response.data);
         })
@@ -58,7 +58,7 @@ const Home = () => {
     }
 
     if (newBid > item.currentBid) {
-      axios.put(`http://localhost:8000/api/thrift-items/bid/${id}`, { currentBid: newBid })
+      axios.put(`${process.env.REACT_APP_API_URL}/api/thrift-items/bid/${id}`, { currentBid: newBid })
         .then(response => {
           setThriftItems(thriftItems.map(item => item._id === id ? response.data : item));
         })
