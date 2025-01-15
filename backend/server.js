@@ -26,7 +26,7 @@ mongoose.connect('mongodb://localhost:27017/thriftDB', { useNewUrlParser: true, 
 
 
 //connect to the cloud
-mongoose.connect('mongodb+srv://isabelagbu13:ef1dwuPhk7WLI9wl@my-cluster.hfrkbar.mongodb.net/thriftDB', { useNewUrlParser: true }) 
+mongoose.connect(MONG0DB_URI, { useNewUrlParser: true }) 
 .then(data => { 
 console.log('Mongo DB connection success!') 
 }) 
